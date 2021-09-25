@@ -1,0 +1,41 @@
+#cardWrapper{
+    height: 540px;
+    width: 900px;
+    background-image: url(https://wallpapercave.com/wp/wp3307005.jpg);
+    background-size: 100% 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+
+#pPhoto{
+    height: 250px;
+}
+
+#infoWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#imgProfile{
+    margin-top: 145px;
+}
+
+h3{
+    color: aliceblue;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}

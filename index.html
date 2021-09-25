@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Business Card</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id='root'></div>
+        <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script> <!-- Librerias de react -->
+        <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+        <script type="text/babel">
+            const rootElement = document.getElementById('root');
+
+            class BusinessCard extends React.Component{
+                
+                render(){
+                    console.log(this.props); //Creas la clase
+                    return(
+                        
+                        <p id = "cardWrapper"> {/*Contenedor principal de la tarjeta*/}
+                            <p id = "imgProfile"> {/*Contenedor de la imagen de perfil*/}
+                                <img src="images/ProfilePhoto.jpg" alt="Profile Photo" id = "pPhoto"/> {/*Foto de perfil*/}
+                            </p>
+                            <p id = "infoWrapper"> {/*Contenedor de informacion principal de la tarjeta*/}
+                                <h1>{this.props.name}</h1>
+                                <h2>{this.props.carrer}</h2>
+                                <h2>Tecnológico de Monterrey</h2>
+                                <h2>Campus {this.props.campus}</h2>
+                                <h3>{this.props.tecid}</h3>
+                                <h3>Correo: {this.props.mail}</h3>
+                                <h3>Cel: {this.props.phone}</h3>
+                            </p>
+                        </p>
+                    );
+                }
+            }
+            
+            //Se ejecuta la clase y se envian los parametros
+            ReactDOM.render(
+                <BusinessCard name="Luis Donaldo Gómez Mendoza" carrer = "Ingeniería en Tecnologías de la Información" tecid = 'A01272435' mail = 'A01272435@itesm.mx' phone = '7711417177' campus = 'Hidalgo'/>, 
+                rootElement
+            )
+        </script>
+    </body>
+</html>
