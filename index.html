@@ -12,28 +12,36 @@
         <script type="text/babel">
             const rootElement = document.getElementById('root');
 
-            class BusinessCard extends React.Component{
-                
-                render(){
-                    console.log(this.props); //Creas la clase
+            function BusinessCard(props){
+                const [hour, setHour] = React.useState('3:00');
+
+                    console.log(props);
+
+                    function handleClick(event){
+                        event.preventDefault();
+                         setHour(horarioDeComida.value);
+                    }
+
                     return(
                         
-                        <p id = "cardWrapper"> {/*Contenedor principal de la tarjeta*/}
-                            <p id = "imgProfile"> {/*Contenedor de la imagen de perfil*/}
+                        <div id = "cardWrapper"> {/*Contenedor principal de la tarjeta*/}
+                            <div id = "imgProfile"> {/*Contenedor de la imagen de perfil*/}
                                 <img src="images/ProfilePhoto.jpg" alt="Profile Photo" id = "pPhoto"/> {/*Foto de perfil*/}
-                            </p>
-                            <p id = "infoWrapper"> {/*Contenedor de informacion principal de la tarjeta*/}
-                                <h1>{this.props.name}</h1>
-                                <h2>{this.props.carrer}</h2>
+                            </div>
+                            <div id = "infoWrapper"> {/*Contenedor de informacion principal de la tarjeta*/}
+                                <h1>{props.name}</h1>
+                                <h2>{props.carrer}</h2>
                                 <h2>Tecnológico de Monterrey</h2>
-                                <h2>Campus {this.props.campus}</h2>
-                                <h3>{this.props.tecid}</h3>
-                                <h3>Correo: {this.props.mail}</h3>
-                                <h3>Cel: {this.props.phone}</h3>
-                            </p>
-                        </p>
-                    );
-                }
+                                <h2>Campus {props.campus}</h2>
+                                <h3>{props.tecid}</h3>
+                                <h3>Correo: {props.mail}</h3>
+                                <h3>Cel: {props.phone}</h3>
+                                <h3 htmlFor="horarioDeComida">La hora de comida de hoy es: {hour} p.m.</h3>
+                                <input id="horarioDeComida" type="text"></input> <button type = "button" onClick={handleClick}>Cambiar hora de comida</button>
+                            </div>
+                        </div>
+                    )
+                
             }
             
             //Se ejecuta la clase y se envian los parametros

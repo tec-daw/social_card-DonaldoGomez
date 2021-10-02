@@ -1,5 +1,5 @@
 #cardWrapper{
-    height: 540px;
+    height: 600px;
     width: 900px;
     background-image: url(https://wallpapercave.com/wp/wp3307005.jpg);
     background-size: 100% 100%;
@@ -10,13 +10,16 @@
 
 
 #pPhoto{
-    height: 250px;
+    height: 300px;
+    border-radius: 50%;
 }
 
 #infoWrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: space-around;
+    height: 100%;
 }
 
 #imgProfile{
@@ -31,7 +34,6 @@ h3{
 
 h2{
     text-align: center;
-
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
