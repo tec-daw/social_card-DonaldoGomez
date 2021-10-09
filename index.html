@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Business Card</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id='root'></div>
+        <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script> <!-- Librerias de react -->
+        <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+        <script type="text/babel">
+            const rootElement = document.getElementById('root');
+
+            function BusinessCard(props){
+                const [hour, setHour] = React.useState('3:00');
+
+                    console.log(props);
+
+                    function handleClick(event){
+                        event.preventDefault();
+                         setHour(horarioDeComida.value);
+                    }
+
+                    return(
+                        
+                        <div id = "cardWrapper"> {/*Contenedor principal de la tarjeta*/}
+                            <div id = "imgProfile"> {/*Contenedor de la imagen de perfil*/}
+                                <img src="images/ProfilePhoto.jpg" alt="Profile Photo" id = "pPhoto"/> {/*Foto de perfil*/}
+                            </div>
+                            <div id = "infoWrapper"> {/*Contenedor de informacion principal de la tarjeta*/}
+                                <h1>{props.name}</h1>
+                                <h2>{props.carrer}</h2>
+                                <h2>Tecnológico de Monterrey</h2>
+                                <h2>Campus {props.campus}</h2>
+                                <h3>{props.tecid}</h3>
+                                <h3>Correo: {props.mail}</h3>
+                                <h3>Cel: {props.phone}</h3>
+                                <h3 htmlFor="horarioDeComida">La hora de comida de hoy es: {hour} p.m.</h3>
+                                <input id="horarioDeComida" type="text"></input> <button type = "button" onClick={handleClick}>Cambiar hora de comida</button>
+                            </div>
+                        </div>
+                    )
+                
+            }
+            
+            //Se ejecuta la clase y se envian los parametros
+            ReactDOM.render(
+                <BusinessCard name="Luis Donaldo Gómez Mendoza" carrer = "Ingeniería en Tecnologías de la Información" tecid = 'A01272435' mail = 'A01272435@itesm.mx' phone = '7711417177' campus = 'Hidalgo'/>, 
+                rootElement
+            )
+        </script>
+    </body>
+</html>
